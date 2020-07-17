@@ -1,9 +1,275 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Text;
 
 namespace AlgorithmsLeetCode.Chapters.LinkedListProblems
 {
 	public class ListProblems
 	{
+		//  Palindrome Linked List
+		// O(n)
+		public bool IsPalindrome(ListNode head)
+		{
+			ListNode fast = head;
+			ListNode slow = head;
+
+			while (fast != null && fast.next != null)
+			{
+				fast = fast.next.next;
+				slow = slow.next;
+			}
+
+			fast = head;
+			slow = ReverseNode(slow);
+
+			while (slow != null)
+			{
+				if(fast.val != slow.val)
+				{
+					return false;
+				}
+
+				fast = fast.next;
+				slow = slow.next;
+			}
+
+			return true;
+
+		}
+
+		private ListNode ReverseNode(ListNode listNode)
+		{
+			ListNode prev = null;
+			ListNode curr = listNode;
+			while(curr != null)
+			{
+				ListNode next = curr.next;
+				curr.next = prev;
+				prev = curr;
+				curr = next;
+			}
+
+			return prev;
+		}
+
+		// O(n^2)
+		//	if(head == null)
+		//	{
+		//		return true;
+		//	}
+
+		//	int length = 0;
+		//	ListNode curr = head;
+		//	while (curr != null)
+		//	{
+		//		curr = curr.next;
+		//		length++;
+		//	}
+
+		//	int index = 0;
+		//	curr = head;
+		//	while (curr != null)
+		//	{
+		//		if(index > length / 2 + 1)
+		//		{
+		//			break;
+		//		}
+
+		//		ListNode palindrom = GetNthNode(length, index, curr);
+		//		if (palindrom.val == curr.val)
+		//		{
+		//			curr = curr.next;
+		//			index += 2;
+		//		}
+		//		else
+		//		{
+		//			return false;
+		//		}
+		//	}
+
+		//	return true;
+		//}
+
+		//private ListNode GetNthNode(int length, int index, ListNode head)
+		//{
+		//	int shouldGoThrought = length - index - 1;
+		//	ListNode curr = head;
+		//	while (shouldGoThrought > 0)
+		//	{
+		//		curr = curr.next;
+		//		shouldGoThrought--;
+		//	}
+
+		//	return curr;
+		//}
+
+		// 83. Remove Duplicates from Sorted List
+		// O(n)
+		public ListNode DeleteDuplicates(ListNode head)
+		{
+			ListNode slow = head;
+			ListNode fast = head.next;
+			while (fast != null)
+			{
+				if (slow.val == fast.val)
+				{
+					fast = fast.next;
+					slow.next = fast;
+				}
+				else
+				{
+					slow = slow.next;
+					fast = fast.next;
+				}
+			}
+
+			return head;
+		}
+
+		// 876. Middle of the Linked List
+		public ListNode MiddleNode(ListNode head)
+		{
+			ListNode fast = head;
+			ListNode slow = head;
+			while(fast != null && fast.next != null)
+			{
+				fast = fast.next.next;
+				slow = slow.next;
+			}
+
+			return slow;
+
+			//if (head == null || head.next == null)
+			//{
+			//	return head;
+			//}
+
+			//int length = 0;
+			//ListNode curr = head;
+			//while (curr != null)
+			//{
+			//	length++;
+			//	curr = curr.next;
+			//}
+
+			//curr = head;
+			//int index = length / 2;
+			//while (index != 0)
+			//{
+			//	curr = curr.next;
+			//	index--;
+			//}
+
+			//return curr;
+		}
+
+		// 1290. Convert Binary Number in a Linked List to Integer
+		public int GetDecimalValue(ListNode head)
+		{
+			int num = 0;
+			while (head != null)
+			{
+				num = (num * 2) + head.val;
+				head = head.next;
+			}
+			return num;
+			//if(head == null)
+			//{
+			//	return 0;
+			//}
+
+			//StringBuilder stringBuilder = new StringBuilder();
+			//while(head != null)
+			//{
+			//	stringBuilder.Append(head.val);
+			//	head = head.next;
+			//}
+
+			//return Convert.ToInt32(stringBuilder.ToString(), 2);
+		}
+
+
+		//  Odd Even Linked List
+		public ListNode OddEvenList(ListNode head)
+		{
+			if(head == null)
+			{
+				return head;
+			}
+
+			ListNode evenHead = head.next;
+			ListNode odd = head;
+			ListNode even = evenHead;
+
+			while (even != null && even.next != null)
+			{
+				odd.next = even.next;
+				odd = even.next;
+				even.next = odd.next;
+				even = even.next;
+			}
+			odd.next = evenHead;
+
+			return head;
+
+			//int length = 0;
+			//ListNode current = head;
+			//while (current != null)
+			//{
+			//	current = current.next;
+			//	length++;
+			//}
+
+			//if (length < 3)
+			//{
+			//	return head;
+			//}
+
+			//ListNode oddListNode = head;
+			//ListNode oddHead = head;
+			//ListNode evenHead = head.next;
+			//ListNode evenListNode = head.next;
+			//int index = 1;
+			//ListNode curr = head.next.next;
+			//while (curr != null && index != length)
+			//{
+			//	if (index % 2 == 0)
+			//	{
+			//		evenListNode.next = curr;
+			//		evenListNode = evenListNode.next;
+			//	}
+			//	else
+			//	{
+			//		oddListNode.next = curr;
+			//		oddListNode = oddListNode.next;
+			//	}
+
+			//	index++;
+			//	curr = curr.next;
+			//}
+
+			//evenListNode.next = null;
+
+			//oddListNode.next = evenHead;
+			//return oddHead;
+		}
+
+		//  Remove Linked List Elements
+		public ListNode RemoveElements(ListNode head, int val)
+		{
+			if(head == null)
+			{
+				return head;
+			}
+
+			if (head.val == val)
+				return RemoveElements(head.next, val);
+
+			head.next = RemoveElements(head.next, val);
+			return head;
+		}
+
 		//   Reverse Linked List
 		public ListNode ReverseList(ListNode head)
 		{
@@ -266,10 +532,10 @@ namespace AlgorithmsLeetCode.Chapters.LinkedListProblems
 		{
 			public int val;
 			public ListNode next;
-			public ListNode(int x)
+			public ListNode(int val = 0, ListNode next = null)
 			{
-				val = x;
-				next = null;
+				this.val = val;
+				this.next = next;
 			}
 		}
 	}

@@ -2,11 +2,39 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Text;
 
 namespace AlgorithmsLeetCode
 {
 	public class EasyProblems
 	{
+		// 1389. Create Target Array in the Given Order
+		public int[] CreateTargetArray(int[] nums, int[] index)
+		{
+			IList<int> target = new List<int>();
+			for (int i = 0; i < nums.Length; i++)
+			{
+				target.Insert(index[i], nums[i]);
+			}
+
+			return target.ToArray();
+		}
+
+		// 709. To Lower Case
+		public string ToLowerCase(string str)
+		{
+			byte[] asciiBytes = Encoding.ASCII.GetBytes(str);
+			for (int i = 0; i < str.Length; i++)
+			{
+				if (asciiBytes[i] >= 65 && asciiBytes[i] <= 90)
+				{
+					asciiBytes[i] = (byte)(asciiBytes[i] + 32);
+				}
+			}
+
+			return Encoding.ASCII.GetString(asciiBytes);
+		}
+
 		// 1281. Subtract the Product and Sum of Digits of an Integer
 		/*
 		 * Input: n = 234

@@ -1,10 +1,37 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace AlgorithmsLeetCode.Contests
 {
 	public class JuneLeetCodingChallenge
 	{
+		//  Top K Frequent Elements
+		public int[] TopKFrequent(int[] nums, int k)
+		{
+			int[] result = nums.GroupBy(item => item)
+								.OrderByDescending(item => item.Count())
+								.Take(k)
+								.Select(item => item.Key)
+								.ToArray();
+			return result;
+
+			//IDictionary<int, int> dictionary = new Dictionary<int, int>();
+			//for (int i = 0; i < nums.Length; i++)
+			//{
+			//	if(dictionary.ContainsKey(nums[i]))
+			//	{
+			//		dictionary[nums[i]] += 1;
+			//	} else
+			//	{
+
+			//		dictionary.Add(nums[i], 1);
+			//	}
+			//}
+
+			//return dictionary.OrderByDescending(item => item.Value).Take(k).Select(item => item.Key).ToArray();
+		}
+
 		//  Reverse Words in a String
 		public string ReverseWords(string s)
 		{
