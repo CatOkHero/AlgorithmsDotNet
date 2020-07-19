@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Problems\EasyProblems.fs" />
     <Compile Include="Chapters\LinkedListProblems.fs" />
     <Compile Include="Chapters\Recursion.fs" />
     <Compile Include="Program.fs" />

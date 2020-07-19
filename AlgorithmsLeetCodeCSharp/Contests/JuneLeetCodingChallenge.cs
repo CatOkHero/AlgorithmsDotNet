@@ -6,6 +6,76 @@ namespace AlgorithmsLeetCode.Contests
 {
 	public class JuneLeetCodingChallenge
 	{
+		//  Course Schedule II
+		// TODO: This silly approach doesn't work)
+		public int[] FindOrder(int numCourses, int[][] prerequisites)
+		{
+			if(prerequisites.Length == 0)
+			{
+				int[] resultArray = new int[numCourses];
+				for (int i = 0; i < numCourses; i++)
+				{
+					resultArray[i] = i;
+				}
+
+				return resultArray;
+			}
+
+			IDictionary<int, List<int>> dictionary = new Dictionary<int, List<int>>();
+			List<int> result = new List<int>();
+			List<int> dontHaveLeaves = new List<int>();
+			for (int i = 0; i < prerequisites.Length; i++)
+			{
+				if(!dictionary.ContainsKey(prerequisites[i][1]))
+				{
+					dictionary.Add(prerequisites[i][1], new List<int>() { prerequisites[i][0] });
+				}
+				else
+				{
+					dictionary[prerequisites[i][1]].Add(prerequisites[i][0]);
+				}
+			}
+
+			var first = dictionary.FirstOrDefault().Key;
+			result.Add(first);
+			for (int i = 0; i < dictionary.Count(); i++)
+			{
+				for (int j = 0; j < dictionary[i].Count; j++)
+				{
+					if(dictionary.ContainsKey(dictionary[i][j]))
+					{
+						result.Add(dictionary[i][j]);
+					}
+					else
+					{
+						var value = dictionary.FirstOrDefault(item => item.Value == dictionary[i]).Key;
+						if(result.Contains(value))
+						{
+							result.Add(dictionary[i][j]);
+							if (dontHaveLeaves.Contains(dictionary[i][j]))
+							{
+								dontHaveLeaves.Remove(dictionary[i][j]);
+							}
+						} else
+						{
+							dontHaveLeaves.Add(dictionary[i][j]);
+						}
+
+					}
+				}
+			}
+
+			if(dontHaveLeaves.Count > 0)
+			{
+				return new int[0];
+			}
+			else
+			{
+				return result.Distinct().ToArray();
+			}
+		}
+
+
 		//  Top K Frequent Elements
 		public int[] TopKFrequent(int[] nums, int k)
 		{

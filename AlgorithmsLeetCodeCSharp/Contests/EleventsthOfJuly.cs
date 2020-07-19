@@ -4,6 +4,7 @@ using System.Linq;
 
 namespace AlgorithmsLeetCode
 {
+	// https://leetcode.com/contest/weekly-contest-197
 	public class EleventsthOfJuly
 	{
 		// 5461. Number of Substrings With Only 1s
@@ -118,7 +119,6 @@ namespace AlgorithmsLeetCode
 			return k;
 		}
 
-
 		// 5446. Minimum Difference Between Largest and Smallest Value in Three Moves
 		public int MinDifference(int[] nums)
 		{
@@ -174,8 +174,6 @@ namespace AlgorithmsLeetCode
 			var modulo = sum % math;
 			return (int)modulo;
 		}
-
-
 
 		// 5177. Reformat Date
 		private IList<string> Months = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };

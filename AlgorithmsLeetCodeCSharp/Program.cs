@@ -2,6 +2,8 @@
 using AlgorithmsLeetCode.Concurency;
 using AlgorithmsLeetCode.Contests;
 using AlgorithmsLeetCode.Problems;
+using AlgorithmsLeetCodeCSharp.Chapters.LinkedListProblems;
+using AlgorithmsLeetCodeCSharp.Contests;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -13,7 +15,10 @@ namespace AlgorithmsLeetCode
 	{
 		static void Main(string[] args)
 		{
-			var nums = new int[] { 1 };
+			var doublyLinkedListTry = new SetupDoublyLinkedListTests();
+			doublyLinkedListTry.ExecuteExampleFromProblem();
+
+			//var nums = new int[] { 1 };
 			var index = new int[] { 2 };
 			//var nums = new int[4][] { 
 			//	new int[]{ 10, 20 }, 
@@ -29,6 +34,16 @@ namespace AlgorithmsLeetCode
 
 			var juneContest = new JuneLeetCodingChallenge();
 			//var result = juneContest.TopKFrequent(nums, 2);
+			int[][] nums = new int[1][];
+			nums[0] = new int[2] { 0, 1 };
+			//var result = juneContest.FindOrder(2, nums);
+
+
+			var contest = new EleventsthOfJuly();
+			//var result = weekly.NumWaterBottles(9, 3);
+
+			var weekly = new NineteenthOfJuly();
+			//var result = weekly.NumWaterBottles(9, 3);
 
 			//var tree = new Recursion.TreeLiNode(3, new Recursion.TreeNode(9, new Recursion.TreeNode(5, new Recursion.TreeNode(4, new Recursion.TreeNode(2))), null), new Recursion.TreeNode(20, new Recursion.TreeNode(15), new Recursion.TreeNode(7)));
 			//var l1 = new Recursion.ListNode(1, new Recursion.ListNode(3, new Recursion.ListNode(5)));
