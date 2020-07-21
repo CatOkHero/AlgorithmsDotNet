@@ -1,12 +1,113 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace AlgorithmsLeetCode.Contests
 {
+	public class SetupJuneLeetCodingChallenge
+	{
+		public void SetupTestCases()
+		{
+			var juneLeetCodingChallange = new JuneLeetCodingChallenge();
+
+			// TODO : FIX
+			//var addBinaryResult = juneLeetCodingChallange.AddBinary("1111111", "1");
+			//if(addBinaryResult != "10000000")
+			//{
+			//	throw new Exception("Failed");
+			//}
+
+			int[][] nums = new int[1][];
+			nums[0] = new int[2] { 0, 1 };
+			//var findOrder = juneLeetCodingChallange.FindOrder(2, nums);
+		}
+	}
+
 	public class JuneLeetCodingChallenge
 	{
-		//  Course Schedule II
+		// https://leetcode.com/explore/challenge/card/july-leetcoding-challenge/546/week-3-july-15th-july-21st/3395/
+		//  Add Binary
+		public string AddBinary(string a, string b)
+		{
+			int a1Length = a.Length;
+			int b1Length = b.Length;
+			int length = a1Length > b1Length ? a1Length : b1Length;
+			byte prevCarry = 0;
+			IList<byte> sum = new List<byte>();
+			for (int i = length - 1; i >= 0; i--)
+			{
+				int a1 = prevCarry;
+				int b1 = prevCarry;
+				if (i < a1Length)
+				{
+					a1 = a[i] == '0' ? 0 : 1;
+				}
+
+				if(i < b1Length)
+				{
+					b1 = b[i] == '0' ? 0 : 1;
+				}
+
+				byte carry = (byte)(a1 & b1);
+				sum.Add((byte)(a1 ^ b1 ^ prevCarry));
+				prevCarry = carry;
+			}
+
+			if(a1Length > b1Length)
+			{
+				int lastCounter = a1Length - (a1Length - b1Length) - 1;
+				int a1 = a[lastCounter] == '0' ? 0 : 1;
+				byte carry = (byte)(a1 & prevCarry);
+				sum.Add((byte)(a1 ^ prevCarry));
+				if(carry != 0)
+				{
+					sum.Add(carry);
+				}
+			} else if(b1Length > a1Length)
+			{
+				int lastCounter = b1Length - (b1Length - a1Length) - 1;
+				int b1 = b[lastCounter] == '0' ? 0 : 1;
+				byte carry = (byte)(b1 & prevCarry);
+				sum.Add((byte)(b1 ^ prevCarry));
+				if (carry != 0)
+				{
+					sum.Add(carry);
+				}
+			}
+
+			return BitConverter.ToString(sum.ToArray());
+		}
+
+
+		public class ListNode
+		{
+			public int val;
+			public ListNode next;
+			public ListNode(int val = 0, ListNode next = null)
+			{
+				this.val = val;
+				this.next = next;
+			}
+		}
+
+		// https://leetcode.com/explore/challenge/card/july-leetcoding-challenge/546/week-3-july-15th-july-21st/3396/
+		// Remove Linked List Elements
+		public ListNode RemoveElements(ListNode head, int val)
+		{
+			if (head == null)
+			{
+				return head;
+			}
+
+			if (head.val == val)
+				return RemoveElements(head.next, val);
+
+			head.next = RemoveElements(head.next, val);
+			return head;
+		}
+
+		// Course Schedule II
 		// TODO: This silly approach doesn't work)
 		public int[] FindOrder(int numCourses, int[][] prerequisites)
 		{

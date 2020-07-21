@@ -15,22 +15,22 @@ namespace AlgorithmsLeetCodeCSharp.Chapters.LinkedListProblems
              * [[],[1],[3],[1,2],[1],[1],[1]]
             */
             //first failing case
-            doublyLinkedList.addAtHead(1);
-            doublyLinkedList.addAtTail(3);
-            doublyLinkedList.addAtIndex(1, 2);
-            var firstResult = doublyLinkedList.get(1);
-            doublyLinkedList.deleteAtIndex(1);
+            doublyLinkedList.AddAtHead(1);
+            doublyLinkedList.AddAtTail(3);
+            doublyLinkedList.AddAtIndex(1, 2);
+            var firstResult = doublyLinkedList.Get(1);
+            doublyLinkedList.DeleteAtIndex(1);
             if (firstResult != 2
-                || doublyLinkedList.get(0) != 1
-                || doublyLinkedList.get(1) != 3)
+                || doublyLinkedList.Get(0) != 1
+                || doublyLinkedList.Get(1) != 3)
             {
                 throw new System.Exception("Failed");
             }
 
             //second failing case
             doublyLinkedList = new DoublyLinkedList();
-            doublyLinkedList.addAtHead(1);
-            doublyLinkedList.deleteAtIndex(0);
+            doublyLinkedList.AddAtHead(1);
+            doublyLinkedList.DeleteAtIndex(0);
 
             /*
              * ["MyLinkedList",
@@ -52,20 +52,20 @@ namespace AlgorithmsLeetCodeCSharp.Chapters.LinkedListProblems
             */
             //third failing case
             doublyLinkedList = new DoublyLinkedList();
-            doublyLinkedList.addAtHead(7);
-            doublyLinkedList.addAtHead(2);
-            doublyLinkedList.addAtHead(1);
-            doublyLinkedList.addAtIndex(3, 0);
-            doublyLinkedList.deleteAtIndex(2);
-            doublyLinkedList.addAtHead(6);
-            doublyLinkedList.addAtTail(4);
-            var thirdResult = doublyLinkedList.get(4);
-            doublyLinkedList.addAtHead(4);
-            doublyLinkedList.addAtIndex(5, 0);
-            doublyLinkedList.addAtHead(6);
+            doublyLinkedList.AddAtHead(7);
+            doublyLinkedList.AddAtHead(2);
+            doublyLinkedList.AddAtHead(1);
+            doublyLinkedList.AddAtIndex(3, 0);
+            doublyLinkedList.DeleteAtIndex(2);
+            doublyLinkedList.AddAtHead(6);
+            doublyLinkedList.AddAtTail(4);
+            var thirdResult = doublyLinkedList.Get(4);
+            doublyLinkedList.AddAtHead(4);
+            doublyLinkedList.AddAtIndex(5, 0);
+            doublyLinkedList.AddAtHead(6);
             if (thirdResult != 4
-                || doublyLinkedList.get(0) != 6
-                || doublyLinkedList.get(7) != 4)
+                || doublyLinkedList.Get(0) != 6
+                || doublyLinkedList.Get(7) != 4)
             {
                 throw new System.Exception("Failed");
             }
@@ -83,13 +83,13 @@ namespace AlgorithmsLeetCodeCSharp.Chapters.LinkedListProblems
             */
             //fourth failing case
             doublyLinkedList = new DoublyLinkedList();
-            doublyLinkedList.addAtIndex(0, 10);
-            doublyLinkedList.addAtIndex(0, 20);
-            doublyLinkedList.addAtIndex(1, 30);
-            var fourthResult = doublyLinkedList.get(0);
+            doublyLinkedList.AddAtIndex(0, 10);
+            doublyLinkedList.AddAtIndex(0, 20);
+            doublyLinkedList.AddAtIndex(1, 30);
+            var fourthResult = doublyLinkedList.Get(0);
             if (fourthResult != 20
-                || doublyLinkedList.get(1) != 30
-                || doublyLinkedList.get(2) != 10)
+                || doublyLinkedList.Get(1) != 30
+                || doublyLinkedList.Get(2) != 10)
             {
                 throw new System.Exception("Failed");
             }
@@ -114,20 +114,20 @@ namespace AlgorithmsLeetCodeCSharp.Chapters.LinkedListProblems
              */
             //fifth failed case
             doublyLinkedList = new DoublyLinkedList();
-            doublyLinkedList.addAtHead(2);
-            doublyLinkedList.deleteAtIndex(1);
-            doublyLinkedList.addAtHead(2);
-            doublyLinkedList.addAtHead(7);
-            doublyLinkedList.addAtHead(3);
-            doublyLinkedList.addAtHead(2);
-            doublyLinkedList.addAtHead(5);
-            doublyLinkedList.addAtTail(5);
-            var fifthResult = doublyLinkedList.get(5);
-            doublyLinkedList.deleteAtIndex(6);
-            doublyLinkedList.deleteAtIndex(4);
+            doublyLinkedList.AddAtHead(2);
+            doublyLinkedList.DeleteAtIndex(1);
+            doublyLinkedList.AddAtHead(2);
+            doublyLinkedList.AddAtHead(7);
+            doublyLinkedList.AddAtHead(3);
+            doublyLinkedList.AddAtHead(2);
+            doublyLinkedList.AddAtHead(5);
+            doublyLinkedList.AddAtTail(5);
+            var fifthResult = doublyLinkedList.Get(5);
+            doublyLinkedList.DeleteAtIndex(6);
+            doublyLinkedList.DeleteAtIndex(4);
             if(fifthResult != 2
-                || doublyLinkedList.get(0) != 5
-                || doublyLinkedList.get(4) != 2)
+                || doublyLinkedList.Get(0) != 5
+                || doublyLinkedList.Get(4) != 2)
             {
                 throw new System.Exception("Failed");
             }
@@ -152,20 +152,20 @@ namespace AlgorithmsLeetCodeCSharp.Chapters.LinkedListProblems
              */
             //sixth failed case
             doublyLinkedList = new DoublyLinkedList();
-            doublyLinkedList.addAtHead(9);
-            var sixResult = doublyLinkedList.get(1);
-            doublyLinkedList.addAtIndex(1, 1);
-            doublyLinkedList.addAtIndex(1, 7);
-            doublyLinkedList.deleteAtIndex(1);
-            doublyLinkedList.addAtHead(7);
-            doublyLinkedList.addAtHead(4);
-            doublyLinkedList.deleteAtIndex(1);
-            doublyLinkedList.addAtIndex(1, 4);
-            doublyLinkedList.addAtHead(2);
-            doublyLinkedList.deleteAtIndex(5);
+            doublyLinkedList.AddAtHead(9);
+            var sixResult = doublyLinkedList.Get(1);
+            doublyLinkedList.AddAtIndex(1, 1);
+            doublyLinkedList.AddAtIndex(1, 7);
+            doublyLinkedList.DeleteAtIndex(1);
+            doublyLinkedList.AddAtHead(7);
+            doublyLinkedList.AddAtHead(4);
+            doublyLinkedList.DeleteAtIndex(1);
+            doublyLinkedList.AddAtIndex(1, 4);
+            doublyLinkedList.AddAtHead(2);
+            doublyLinkedList.DeleteAtIndex(5);
             if(sixResult != -1
-                || doublyLinkedList.get(0) != 2
-                || doublyLinkedList.get(4) != 1)
+                || doublyLinkedList.Get(0) != 2
+                || doublyLinkedList.Get(4) != 1)
             {
                 throw new System.Exception("Failed");
             }
@@ -345,7 +345,7 @@ namespace AlgorithmsLeetCodeCSharp.Chapters.LinkedListProblems
 
         /** Get the value of the index-th node in the linked list. 
          * If the index is invalid, return -1. */
-        public int get(int index)
+        public int Get(int index)
         {
             int countDown = 0;
             var counter = head;
@@ -365,7 +365,7 @@ namespace AlgorithmsLeetCodeCSharp.Chapters.LinkedListProblems
 
         /** Add a node of value val before the first element of the linked list. After the insertion, 
          * the new node will be the first node of the linked list. */
-        public void addAtHead(int val)
+        public void AddAtHead(int val)
         {
             var newHead = new DoublyNode(val);
             if (head == null)
@@ -385,7 +385,7 @@ namespace AlgorithmsLeetCodeCSharp.Chapters.LinkedListProblems
         }
 
         /** Append a node of value val to the last element of the linked list. */
-        public void addAtTail(int val)
+        public void AddAtTail(int val)
         {
             var newTail = new DoublyNode(val);
             if (tail == null)
@@ -407,7 +407,7 @@ namespace AlgorithmsLeetCodeCSharp.Chapters.LinkedListProblems
         /** Add a node of value val before the index-th node in the linked list. 
          * If index equals to the length of linked list, the node will be appended to the end of linked list.
          * If index is greater than the length, the node will not be inserted. */
-        public void addAtIndex(int index, int val)
+        public void AddAtIndex(int index, int val)
         {
             if(index > length)
 			{
@@ -416,14 +416,13 @@ namespace AlgorithmsLeetCodeCSharp.Chapters.LinkedListProblems
 
             if(index == 0)
 			{
-                addAtHead(val);
+                AddAtHead(val);
                 return;
             }
 
-            var newNode = new DoublyNode(val);
             if (index == length)
             {
-                addAtTail(val);
+                AddAtTail(val);
                 return;
             }
 
@@ -440,6 +439,7 @@ namespace AlgorithmsLeetCodeCSharp.Chapters.LinkedListProblems
                 return;
             }
 
+            var newNode = new DoublyNode(val);
             var prev = counter.prev;
             newNode.prev = prev;
             newNode.next = counter;
@@ -449,7 +449,7 @@ namespace AlgorithmsLeetCodeCSharp.Chapters.LinkedListProblems
         }
 
         /** Delete the index-th node in the linked list, if the index is valid. */
-        public void deleteAtIndex(int index)
+        public void DeleteAtIndex(int index)
         {
             if (index >= length)
             {

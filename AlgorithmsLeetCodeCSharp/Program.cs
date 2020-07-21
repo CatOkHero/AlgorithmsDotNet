@@ -2,6 +2,7 @@
 using AlgorithmsLeetCode.Concurency;
 using AlgorithmsLeetCode.Contests;
 using AlgorithmsLeetCode.Problems;
+using AlgorithmsLeetCodeCSharp.Chapters.BinaryTreeProblems;
 using AlgorithmsLeetCodeCSharp.Chapters.LinkedListProblems;
 using AlgorithmsLeetCodeCSharp.Contests;
 using System;
@@ -15,8 +16,14 @@ namespace AlgorithmsLeetCode
 	{
 		static void Main(string[] args)
 		{
+			var traverseATree = new SetupTraverseATreeProblemsTests();
+			traverseATree.ExecuteTestCases();
+
+			var linkedListConclution = new LinkedListConclusionTests();
+			//linkedListConclution.ExecuteTests();
+
 			var doublyLinkedListTry = new SetupDoublyLinkedListTests();
-			doublyLinkedListTry.ExecuteExampleFromProblem();
+			//doublyLinkedListTry.ExecuteExampleFromProblem();
 
 			//var nums = new int[] { 1 };
 			var index = new int[] { 2 };
@@ -32,10 +39,10 @@ namespace AlgorithmsLeetCode
 			var mediumProblems = new MediumProblems();
 			//var result = mediumProblems.ChangeRecursion(5, nums);
 
-			var juneContest = new JuneLeetCodingChallenge();
-			//var result = juneContest.TopKFrequent(nums, 2);
-			int[][] nums = new int[1][];
-			nums[0] = new int[2] { 0, 1 };
+			var juneContest = new SetupJuneLeetCodingChallenge();
+			juneContest.SetupTestCases();
+			//int[][] nums = new int[1][];
+			//nums[0] = new int[2] { 0, 1 };
 			//var result = juneContest.FindOrder(2, nums);
 
 
@@ -64,24 +71,41 @@ namespace AlgorithmsLeetCode
 			//var listChapter = new ListProblems();
 			//var result = listChapter.DetectCycle(firstNode);
 
-			ListNode a1 = new ListNode(1);
-			ListNode a2 = new ListNode(2);
+			var listProblems = new SetupListProblems();
+			listProblems.ExecuteTestCases();
+
+			ListNode a1 = new ListNode(2);
+			ListNode a2 = new ListNode(4);
 			ListNode a3 = new ListNode(3);
-			ListNode shared1 = new ListNode(4);
-			ListNode shared2 = new ListNode(5);
-			ListNode shared3 = new ListNode(6);
+			ListNode shared1 = new ListNode(5);
+			ListNode shared2 = new ListNode(6);
+			ListNode shared3 = new ListNode(4);
+			ListNode shared4 = new ListNode(9);
+			ListNode shared5 = new ListNode(9);
+			ListNode shared6 = new ListNode(9);
+			ListNode shared7 = new ListNode(9);
+			ListNode shared8 = new ListNode(9);
+			ListNode shared9 = new ListNode(9);
+			ListNode shared10 = new ListNode(9);
 			////ListNode b1 = new ListNode(6);
 			////ListNode b2 = new ListNode(7);
 			a1.next = a2;
 			a2.next = a3;
-			a3.next = shared1;
+			//a3.next = /*shared1*/;
 			shared1.next = shared2;
 			shared2.next = shared3;
+			//shared3.next = shared4;
+			//shared4.next = shared5;
+			//shared5.next = shared6;
+			//shared6.next = shared7;
+			//shared7.next = shared8;
+			//shared8.next = shared9;
+			//shared9.next = shared10;
 			//b1.next = b2;
 			//b2.next = shared1;
 
 			var linkedListChapter = new ListProblems();
-			var resultNode = linkedListChapter.OddEvenList(a1);
+			//var resultNode = linkedListChapter.AddTwoNumbers(a1, shared1);
 
 			//	var concurency = new PrintOrder();
 			//	Task.Run(() => concurency.Second(() => Console.WriteLine("second")));
