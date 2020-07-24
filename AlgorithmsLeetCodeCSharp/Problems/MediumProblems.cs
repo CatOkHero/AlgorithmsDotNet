@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace AlgorithmsLeetCode.Problems
+﻿namespace AlgorithmsLeetCode.Problems
 {
 	public class MediumProblems
 	{

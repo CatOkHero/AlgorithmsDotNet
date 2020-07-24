@@ -1,107 +1,27 @@
-﻿using System;
+﻿using AlgorithmsLeetCodeCSharp.Chapters.LinkedListProblems;
+using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
 
 namespace AlgorithmsLeetCode.Chapters.LinkedListProblems
 {
-	public class SetupListProblems
-	{
-		public void ExecuteTestCases() 
-		{
-			var solution = new ListProblems();
-
-			var node1 = new ListProblems.Node(7);
-			var node2 = new ListProblems.Node(13);
-			var node3 = new ListProblems.Node(11);
-			var node4 = new ListProblems.Node(10);
-			var node5 = new ListProblems.Node(1);
-
-			node1.next = node2;
-			node1.random = null;
-
-			node2.next = node3;
-			node2.random = node1;
-
-			node3.next = node4;
-			node3.random = node5;
-
-			node4.next = node5;
-			node4.random = node3;
-
-			node5.next = null;
-			node5.random = node1;
-
-			var copyRandomListResult1 = solution.CopyRandomList(node1);
-			if(copyRandomListResult1.random != null ||
-				copyRandomListResult1.next.random.val != node1.val)
-			{
-				throw new Exception("Failed");
-			}
-
-			node1 = new ListProblems.Node(1);
-			node2 = new ListProblems.Node(2);
-
-			node1.next = node2;
-			node1.random = node2;
-
-			node2.next = null;
-			node2.random = node2;
-
-			var copyRandomListResult2 = solution.CopyRandomList(node1);
-			if (copyRandomListResult2.val != node1.val 
-				|| copyRandomListResult2.next.val != node2.val
-				|| copyRandomListResult2.next.random.val != node2.val)
-			{
-				throw new Exception("Failed");
-			}
-
-			node1 = new ListProblems.Node(-1);
-
-			node1.next = null;
-			node1.random = node1;
-
-			var copyRandomListResult3 = solution.CopyRandomList(node1);
-			if (copyRandomListResult3.val != node1.val
-				|| copyRandomListResult3.random.val != node1.val)
-			{
-				throw new Exception("Failed");
-			}
-		}
-	}
 
 	public class ListProblems
 	{
-		public class Node
-		{
-			public int val;
-			public Node next;
-			public Node random;
-
-			public Node(int _val)
-			{
-				val = _val;
-				next = null;
-				random = null;
-			}
-		}
-
 		// https://leetcode.com/explore/learn/card/linked-list/213/conclusion/1229/
 		//   Copy List with Random Pointer
 
-		public Node CopyRandomList(Node head)
+		public NodeWithRadom CopyRandomList(NodeWithRadom head)
 		{
 			if(head == null)
 			{
 				return head;
 			}
 
-			var map = new Dictionary<Node, Node>();
+			var map = new Dictionary<NodeWithRadom, NodeWithRadom>();
 			var current = head;
 			while (current != null)
 			{
-				map[current] = new Node(current.val);
+				map[current] = new NodeWithRadom(current.val);
 				current = current.next;
 			}
 

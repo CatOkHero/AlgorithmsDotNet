@@ -10,11 +10,3 @@ let insertAt index newEl input =
   // for the specified index
   input |> List.mapi (fun i el -> if i = index then [newEl; el] else [el])
         |> List.concat
-
-let concatinated = Seq.zip nums index
-let target = 
-    for n, i in concatinated do
-        let resut = insertAt i n targetList
-        resut
-
-target

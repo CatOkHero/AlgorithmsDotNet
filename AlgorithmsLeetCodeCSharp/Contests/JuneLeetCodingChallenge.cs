@@ -1,94 +1,105 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using static AlgorithmsLeetCode.Chapters.LinkedListProblems.ListProblems;
 
 namespace AlgorithmsLeetCode.Contests
 {
-	public class SetupJuneLeetCodingChallenge
-	{
-		public void SetupTestCases()
-		{
-			var juneLeetCodingChallange = new JuneLeetCodingChallenge();
-
-			// TODO : FIX
-			//var addBinaryResult = juneLeetCodingChallange.AddBinary("1111111", "1");
-			//if(addBinaryResult != "10000000")
-			//{
-			//	throw new Exception("Failed");
-			//}
-
-			int[][] nums = new int[1][];
-			nums[0] = new int[2] { 0, 1 };
-			//var findOrder = juneLeetCodingChallange.FindOrder(2, nums);
-		}
-	}
-
 	public class JuneLeetCodingChallenge
 	{
+		// https://leetcode.com/explore/featured/card/july-leetcoding-challenge/547/week-4-july-22nd-july-28th/3399/
+		// PostorderTraversal
+		public int[] SingleNumber(int[] nums)
+		{
+			if (nums == null || nums.Length <= 1)
+			{
+				return nums;
+			}
+
+			var dictionary = new Dictionary<int, int>();
+			for (int i = 0; i < nums.Length; i++)
+			{
+				if (dictionary.ContainsKey(nums[i]))
+				{
+					dictionary.Remove(nums[i]);
+				}
+				else
+				{
+					dictionary.Add(nums[i], 1);
+				}
+			}
+
+			return dictionary.Select(item => item.Key).ToArray();
+		}
+
 		// https://leetcode.com/explore/challenge/card/july-leetcoding-challenge/546/week-3-july-15th-july-21st/3395/
 		//  Add Binary
 		public string AddBinary(string a, string b)
 		{
-			int a1Length = a.Length;
-			int b1Length = b.Length;
-			int length = a1Length > b1Length ? a1Length : b1Length;
-			byte prevCarry = 0;
-			IList<byte> sum = new List<byte>();
-			for (int i = length - 1; i >= 0; i--)
+			int aLength = a.Length;
+			int bLength = b.Length;
+			int length = aLength > bLength ? aLength : bLength;
+			bool carry = false;
+			var xorSum = new List<bool>();
+			int ai = aLength - 1;
+			int bi = bLength - 1;
+			for (int i = 0; i < length; i++)
 			{
-				int a1 = prevCarry;
-				int b1 = prevCarry;
-				if (i < a1Length)
+				bool a1 = false;
+				bool b1 = false;
+				if (ai >= 0)
 				{
-					a1 = a[i] == '0' ? 0 : 1;
+					a1 = a[ai] == '0' ? false : true;
 				}
 
-				if(i < b1Length)
+				if (bi >= 0)
 				{
-					b1 = b[i] == '0' ? 0 : 1;
+					b1 = b[bi] == '0' ? false : true;
 				}
 
-				byte carry = (byte)(a1 & b1);
-				sum.Add((byte)(a1 ^ b1 ^ prevCarry));
-				prevCarry = carry;
+				// XOR operation will make the effect of sum of 2 bits
+				// plus "carry" which holds the previous state
+				// Example: 
+				// 111 + 001 => (we staring from the end)
+				// 1 step: 1 ^ 1 ^ 0 (as first carry would be false/0 ) => 0
+				// calculate carry as 1 & 1 => 1
+				// 2 step: 1 ^ 0 ^ 1 => 0
+				// calculate carry as 1 & 1 => 1 (because left bits are already 0, we take a "& carry")
+				// 3 step: 1 ^ 0 ^ 1 => 0
+				// calculate carry as 1 & 1 => 1 (because left bits are already 0, we take a "& carry")
+				// end of cycle, we have xorSum => 0, 0, 0
+				// check if carry == 1 and add it
+				// final xorSum => 1, 0, 0, 0
+				xorSum.Add(a1 ^ b1 ^ carry);
+				if (carry == false)
+				{
+					carry = a1 & b1;
+				}
+				else if (a1 == false)
+				{
+					carry &= b1;
+				}
+				else
+				{
+					carry &= a1;
+				}
+
+				ai--;
+				bi--;
 			}
 
-			if(a1Length > b1Length)
+			if (carry)
 			{
-				int lastCounter = a1Length - (a1Length - b1Length) - 1;
-				int a1 = a[lastCounter] == '0' ? 0 : 1;
-				byte carry = (byte)(a1 & prevCarry);
-				sum.Add((byte)(a1 ^ prevCarry));
-				if(carry != 0)
-				{
-					sum.Add(carry);
-				}
-			} else if(b1Length > a1Length)
-			{
-				int lastCounter = b1Length - (b1Length - a1Length) - 1;
-				int b1 = b[lastCounter] == '0' ? 0 : 1;
-				byte carry = (byte)(b1 & prevCarry);
-				sum.Add((byte)(b1 ^ prevCarry));
-				if (carry != 0)
-				{
-					sum.Add(carry);
-				}
+				xorSum.Add(carry);
 			}
 
-			return BitConverter.ToString(sum.ToArray());
-		}
-
-
-		public class ListNode
-		{
-			public int val;
-			public ListNode next;
-			public ListNode(int val = 0, ListNode next = null)
+			var chars = new char[xorSum.Count];
+			for (int i = 0; i < xorSum.Count; i++)
 			{
-				this.val = val;
-				this.next = next;
+				chars[i] = xorSum[xorSum.Count - 1 - i] ? '1' : '0';
 			}
+
+			return new string(chars);
 		}
 
 		// https://leetcode.com/explore/challenge/card/july-leetcoding-challenge/546/week-3-july-15th-july-21st/3396/
@@ -175,7 +186,6 @@ namespace AlgorithmsLeetCode.Contests
 				return result.Distinct().ToArray();
 			}
 		}
-
 
 		//  Top K Frequent Elements
 		public int[] TopKFrequent(int[] nums, int k)
