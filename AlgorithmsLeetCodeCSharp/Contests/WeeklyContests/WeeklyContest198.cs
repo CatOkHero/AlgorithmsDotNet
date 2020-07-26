@@ -1,9 +1,9 @@
 ﻿using System;
 
-namespace AlgorithmsLeetCodeCSharp.Contests
+namespace AlgorithmsLeetCodeCSharp.Contests.WeeklyContests
 {
 	// https://leetcode.com/contest/weekly-contest-198/
-	public class NineteenthOfJuly
+	public class WeeklyContest198
 	{
 		// 1519. Number of Nodes in the Sub-Tree With the Same Label
 		//public int[] CountSubTrees(int n, int[][] edges, string labels)

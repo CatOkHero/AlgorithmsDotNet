@@ -7,6 +7,27 @@ namespace AlgorithmsLeetCode.Contests
 {
 	public class JuneLeetCodingChallenge
 	{
+		// https://leetcode.com/explore/challenge/card/july-leetcoding-challenge/547/week-4-july-22nd-july-28th/3401/
+		// Find Minimum in Rotated Sorted Array II
+		public int FindMin(int[] nums)
+		{
+			if (nums == null)
+			{
+				return Int32.MinValue;
+			}
+
+			int min = nums[0];
+			for (int i = 1; i < nums.Length; i++)
+			{
+				if (nums[i] < min)
+				{
+					min = nums[i];
+				}
+			}
+
+			return min;
+		}
+
 		// https://leetcode.com/explore/featured/card/july-leetcoding-challenge/547/week-4-july-22nd-july-28th/3399/
 		// PostorderTraversal
 		public int[] SingleNumber(int[] nums)

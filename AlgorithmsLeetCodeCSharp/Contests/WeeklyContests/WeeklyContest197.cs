@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AlgorithmsLeetCode
+namespace AlgorithmsLeetCodeCSharp.Contests.WeeklyContests
 {
 	// https://leetcode.com/contest/weekly-contest-197
-	public class EleventsthOfJuly
+	public class WeeklyContest197
 	{
 		// 5461. Number of Substrings With Only 1s
 		/* 
@@ -19,13 +19,13 @@ namespace AlgorithmsLeetCode
 		public int NumSub(string s)
 		{
 			long k = 0;
-			if(s[0] == '0')
+			if (s[0] == '0')
 			{
 				s = s.Remove(0, 1);
 			}
 
 			string[] splitted = s.Split("0");
-			if(!s.Contains("1"))
+			if (!s.Contains("1"))
 			{
 				return 0;
 			}
@@ -33,12 +33,12 @@ namespace AlgorithmsLeetCode
 			Array.Sort<string>(splitted);
 			for (int i = 0; i < splitted.Length - 1; i++)
 			{
-				if(splitted[i] == string.Empty)
+				if (splitted[i] == string.Empty)
 				{
 					continue;
 				}
 
-				if(splitted[i] == splitted[i + 1])
+				if (splitted[i] == splitted[i + 1])
 				{
 					k += 1;
 					continue;
@@ -68,7 +68,7 @@ namespace AlgorithmsLeetCode
 
 			//	return (int)(k % 100000000007);
 			//}
-			
+
 			//splitted[0] = s.Substring(s.IndexOf("1"), s.IndexOf("0"));
 			//Array.Sort<string>(splitted);
 			//for (int i = 0; i < splitted.Length; i++)

@@ -32,5 +32,29 @@ namespace AlgorithmsLeetCodeCSharpTests.Contests
 			Assert.IsTrue(singleNumber.Contains(3));
 			Assert.IsTrue(singleNumber.Contains(5));
 		}
+
+		[Test]
+		public void Check_FindMin_BaseCase()
+		{
+			int[] oneDimentionalNums = new int[] { 4, 5, 6, 7, 0, 1, 2 };
+			var findMin = solution.FindMin(oneDimentionalNums);
+			Assert.IsTrue(findMin == 0);
+		}
+
+		[Test]
+		public void Check_FindMin_SecondCase()
+		{
+			int[] oneDimentionalNums = new int[] { 2,2,2,0,1 };
+			var findMin = solution.FindMin(oneDimentionalNums);
+			Assert.IsTrue(findMin == 0);
+		}
+
+		[Test]
+		public void Check_FindMin_ThirdCase()
+		{
+			int[] oneDimentionalNums = new int[] { 2, 2, 2, 2, 2 };
+			var findMin = solution.FindMin(oneDimentionalNums);
+			Assert.IsTrue(findMin == 2);
+		}
 	}
 }
