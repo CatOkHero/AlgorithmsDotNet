@@ -8,6 +8,81 @@ namespace AlgorithmsLeetCode
 {
 	public class EasyProblems
 	{
+		// https://leetcode.com/problems/split-a-string-in-balanced-strings/
+		public int BalancedStringSplit(string s)
+		{
+			int R = 0;
+			int L = 0;
+			int count = 0;
+			foreach (var item in s)
+			{
+				if(item == 'R')
+				{
+					R++;
+				}
+				else
+				{
+					L++;
+				}
+
+				if(R == L)
+				{
+					count++;
+				}
+			}
+
+			return count;
+
+			//char? firstCharacter = s[0];
+			//char? secondCharacter = null;
+			//int overallCount = 0;
+			//int repitedCount = 1;
+			//for (int i = 1; i < s.Length; i++)
+			//{
+			//	if(firstCharacter == null)
+			//	{
+			//		firstCharacter = s[i];
+			//		repitedCount = 1;
+			//		continue;
+			//	}
+
+			//	if (s[i] == firstCharacter)
+			//	{
+			//		repitedCount++;
+			//		continue;
+			//	}
+
+			//	if (s[i] == secondCharacter
+			//	  && repitedCount != 0)
+			//	{
+			//		repitedCount--;
+			//	}
+
+			//	if (s[i] != firstCharacter
+			//	  && secondCharacter == null)
+			//	{
+			//		secondCharacter = s[i];
+			//		repitedCount--;
+			//	}
+
+			//	if (repitedCount == 0)
+			//	{
+			//		overallCount++;
+			//		firstCharacter = null;
+			//		secondCharacter = null;
+			//	}
+			//	else if (repitedCount < 0)
+			//	{
+			//		repitedCount = 1;
+			//		firstCharacter = s[i];
+			//		secondCharacter = null;
+			//	}
+			//}
+
+			//return overallCount;
+		}
+
+
 		// 1389. Create Target Array in the Given Order
 		public int[] CreateTargetArray(int[] nums, int[] index)
 		{

@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using static AlgorithmsLeetCode.Chapters.LinkedListProblems.ListProblems;
 
-namespace AlgorithmsLeetCode.Contests
+namespace AlgorithmsLeetCode.Contests.MonthlyContests
 {
+	// https://leetcode.com/explore/featured/card/july-leetcoding-challenge/547/week-4-july-22nd-july-28th/
 	public class JuneLeetCodingChallenge
 	{
 		// https://leetcode.com/explore/challenge/card/july-leetcoding-challenge/547/week-4-july-22nd-july-28th/3401/
