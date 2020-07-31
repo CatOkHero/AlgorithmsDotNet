@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 
-namespace AlgorithmsLeetCode
+namespace AlgorithmsLeetCode.Problems.Easy
 {
 	public class EasyProblems
 	{

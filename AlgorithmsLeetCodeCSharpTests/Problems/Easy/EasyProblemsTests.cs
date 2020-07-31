@@ -1,7 +1,7 @@
-﻿using AlgorithmsLeetCode;
+﻿using AlgorithmsLeetCode.Problems.Easy;
 using NUnit.Framework;
 
-namespace AlgorithmsLeetCodeCSharpTests.Problems
+namespace AlgorithmsLeetCodeCSharpTests.Problems.Easy
 {
 	public class EasyProblemsTests
 	{

@@ -7,6 +7,96 @@ namespace AlgorithmsLeetCodeCSharp.Chapters.QueueAndStackProblems
 	// https://leetcode.com/explore/learn/card/queue-stack/231/practical-application-queue/1376/
 	public class QueueAndBFS
 	{
+		// https://leetcode.com/explore/learn/card/queue-stack/231/practical-application-queue/1371/
+		// Perfect Squares
+		// TODO: FIX, DOESNT" WORK
+		public int NumSquares(int n)
+		{
+			if (n == 0)
+			{
+				return n;
+			}
+
+			int sqrt = (int)Math.Sqrt(n);
+			var queue = new Queue<int>();
+
+			int minCount = int.MaxValue;
+			for (int i = sqrt; i >= 1 ; i--)
+			{
+				var number = i;
+				var count = 0;
+				queue.Enqueue(n);
+				while (queue.Count != 0)
+				{
+					var root = queue.Dequeue();
+					var change = root % number;
+					var square = number * number;
+					var prevSquare = 0;
+					if (number > 1)
+					{
+						prevSquare = (number - 1) * (number - 1);
+					}
+
+					var subtraction = root - square;
+					if (change == 0 && subtraction >= square && subtraction % square == 0)
+					{
+						count++;
+						queue.Enqueue(subtraction);
+						continue;
+					}
+					else if (change == 1 && subtraction >= square && subtraction % square == 1)
+					{
+						count++;
+						queue.Enqueue(subtraction);
+						continue;
+					}
+					else if (subtraction == prevSquare && prevSquare != 1)
+					{
+						number--;
+						queue.Enqueue(subtraction);
+						continue;
+					}
+					else if (subtraction == 0)
+					{
+						count++;
+						minCount = count < minCount ? count : minCount;
+						break;
+					}
+					else if (subtraction < 0)
+					{
+						number--;
+						queue.Enqueue(root);
+						continue;
+					} else if(subtraction > square)
+					{
+						count++;
+						queue.Enqueue(subtraction);
+						continue;
+					} 
+
+					count++;
+					if (subtraction < 0)
+					{
+						minCount = count < minCount ? count : minCount;
+						break;
+					}
+
+					root = subtraction;
+					number--;
+					if (number == 1)
+					{
+						count += root;
+						minCount = count < minCount ? count : minCount;
+						break;
+					}
+					queue.Enqueue(root);
+				}
+			}
+
+			return minCount;
+		}
+
+
 		// https://leetcode.com/explore/learn/card/queue-stack/231/practical-application-queue/1374/
 		// Number of Islands
 		public int NumIslandsWithoutQueue(char[][] grid)

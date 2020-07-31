@@ -1,4 +1,4 @@
-﻿namespace AlgorithmsLeetCode.Problems
+﻿namespace AlgorithmsLeetCode.Problems.Medium
 {
 	public class MediumProblems
 	{

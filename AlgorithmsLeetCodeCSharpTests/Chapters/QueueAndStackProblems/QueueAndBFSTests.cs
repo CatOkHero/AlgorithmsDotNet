@@ -62,5 +62,23 @@ namespace AlgorithmsLeetCodeCSharpTests.Chapters.QueueAndStackProblems
 			int resultWithQueue = solution.NumIslandsWithQueue(grid);
 			Assert.AreEqual(result, resultWithQueue);
 		}
+
+		[TestCase(3, 12)]
+		[TestCase(2, 13)]
+		[TestCase(3, 11)]
+		[TestCase(4, 7)]
+		[TestCase(3, 14)]
+		[TestCase(3, 6)]
+		[TestCase(2, 10)]
+		[TestCase(4, 15)]
+		[TestCase(3, 19)]
+		[TestCase(2, 20)]
+		[TestCase(3, 22)]
+		[TestCase(3, 43)]
+		public void Check_NumSquares_BaseCase(int result, int num)
+		{
+			int numSquares = solution.NumSquares(num);
+			Assert.AreEqual(result, numSquares);
+		}
 	}
 }
