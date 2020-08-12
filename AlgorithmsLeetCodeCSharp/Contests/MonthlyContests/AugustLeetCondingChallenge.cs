@@ -1,8 +1,52 @@
-﻿namespace AlgorithmsLeetCodeCSharp.Contests.MonthlyContests
+﻿using System;
+using System.Collections.Generic;
+
+namespace AlgorithmsLeetCodeCSharp.Contests.MonthlyContests
 {
-    // https://leetcode.com/explore/challenge/card/august-leetcoding-challenge/
-    public class AugustLeetCondingChallenge
+	// https://leetcode.com/explore/challenge/card/august-leetcoding-challenge/
+	public class AugustLeetCondingChallenge
     {
+        // https://leetcode.com/explore/challenge/card/august-leetcoding-challenge/549/week-1-august-1st-august-7th/3414/
+        // Find All Duplicates in an Array
+        public IList<int> FindDuplicates(int[] nums)
+        {
+            var list = new List<int>();
+            if (nums == null || nums.Length == 0)
+            {
+                return list;
+            }
+
+            Array.Sort(nums);
+            for (int i = 1; i < nums.Length; i++)
+            {
+                if (nums[i] == nums[i - 1])
+                {
+                    list.Add(nums[i]);
+                }
+            }
+
+            return list;
+        }
+
+        // https://leetcode.com/explore/challenge/card/august-leetcoding-challenge/549/week-1-august-1st-august-7th/3412/
+        // Power of Four
+        public bool IsPowerOfFour(int num)
+        {
+            //return (num > 0 && (Math.Log10(num) / Math.Log10(4) % 1 == 0));
+
+            return (num > 0 && ((num & (num - 1)) == 0) && (num & 0x11111111) != 0);
+
+            // O(N)
+            //string str = Convert.ToString(num, 2);
+            //var results = str.Split('1');
+            //if (str[0] != '1' || (str.Length - 1) % 2 != 0 || results.Count() != 2)
+            //{
+            //    return false;
+            //}
+
+            //return true;
+        }
+
         // https://leetcode.com/explore/challenge/card/august-leetcoding-challenge/549/week-1-august-1st-august-7th/3411/
         // Valid Palindrome
         public bool IsPalindrome(string s)

@@ -27,5 +27,26 @@ namespace AlgorithmsLeetCodeCSharpTests.Contests.MonthlyContests
 			var isPalindrome = solution.IsPalindrome(s);
 			Assert.AreEqual(result, isPalindrome);
 		}
+
+		[TestCase(16, true)]
+		[TestCase(256, true)]
+		[TestCase(81, false)]
+		[TestCase(24, false)]
+		[TestCase(32, false)]
+		[TestCase(8, false)]
+		[TestCase(63, false)]
+		public void Check_IsPowerOfFour_BaseCase(int num, bool result)
+		{
+			var isPowerOfFour = solution.IsPowerOfFour(num);
+			Assert.AreEqual(result, isPowerOfFour);
+		}
+
+		[TestCase(new int[] { 4, 3, 2, 7, 8, 2, 3, 1 }, new int[] { 2, 3 })]
+		[TestCase(new int[] { 1, 1, 1, 1, 1 }, new int[] { 1, 1, 1, 1 })]
+		public void Check_FindDuplicates_BaseCase(int[] nums, int[] result)
+		{
+			var findDuplicates = solution.FindDuplicates(nums);
+			Assert.AreEqual(result, findDuplicates);
+		}
 	}
 }

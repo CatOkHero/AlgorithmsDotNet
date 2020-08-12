@@ -5,6 +5,40 @@ namespace AlgorithmsLeetCodeCSharp.Chapters.ArrayAndString
     // https://leetcode.com/explore/learn/card/array-and-string/203/introduction-to-string/
     public class IntroductionToString
     {
+
+        public string LongestCommonPrefix(string[] strs)
+        {
+            string pattern = string.Empty;
+            int longestPatternLength = pattern.Length;
+            for (int i = 1; i < strs.Length; i++)
+            {
+                string firstWord = strs[i - 1];
+                string secondWord = strs[i];
+                int patternLength = 0;
+                for (int j = 0; j < firstWord.Length; j++)
+                {
+                    for (int z = 0; z < secondWord.Length; z++)
+                    {
+                        if (firstWord[j] == secondWord[z])
+                        {
+                            patternLength++;
+                        }
+                        else if (firstWord[j] != secondWord[z] && patternLength > longestPatternLength)
+                        {
+                            pattern = firstWord.Substring(j - patternLength + 1, patternLength);
+                            longestPatternLength = patternLength;
+                        }
+                        else
+                        {
+                            patternLength = 0;
+                        }
+                    }
+                }
+            }
+
+            return pattern;
+        }
+
         // https://leetcode.com/explore/learn/card/array-and-string/203/introduction-to-string/1161
         // Implement strStr()
         // N * M
