@@ -8,7 +8,7 @@ namespace AlgorithmsLeetCodeCSharpTests.Contests.WeeklyContests
 		private readonly WeeklyContest201 solution = new WeeklyContest201();
 
 		[TestCase("abBAcC", "")]
-		public void Check_C_(string s, string result)
+		public void Check_MakeGood_BaseCase(string s, string result)
 		{
 			var findKthPositive = solution.MakeGood(s);
 			Assert.AreEqual(result, findKthPositive);
@@ -18,7 +18,7 @@ namespace AlgorithmsLeetCodeCSharpTests.Contests.WeeklyContests
 		[TestCase(4, 11, '1')]
 		[TestCase(1, 1, '0')]
 		[TestCase(2, 3, '1')]
-		public void Check_BB_(int n, int k, int result)
+		public void Check_FindKthBit_BaseCase(int n, int k, int result)
 		{
 			var findKthPositive = solution.FindKthBit(n, k);
 			Assert.AreEqual(result, findKthPositive);

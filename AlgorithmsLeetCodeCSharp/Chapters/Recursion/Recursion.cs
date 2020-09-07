@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace AlgorithmsLeetCode.Chapters.Recursion
 {
-	public class Recursion1
+	public class Recursion
 	{
         //  K-th Symbol in Grammar
         public int KthGrammar(int N, int K)
