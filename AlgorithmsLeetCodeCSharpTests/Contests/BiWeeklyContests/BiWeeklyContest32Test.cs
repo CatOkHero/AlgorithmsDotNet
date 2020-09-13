@@ -24,6 +24,7 @@ namespace AlgorithmsLeetCodeCSharpTests.Contests.BiWeeklyContests
 		[TestCase(")))))))", 5)]
 		[TestCase("()()()()()(", 7)]
 		[TestCase("()())))()", 3)]
+		[TestCase("))(()()))()))))))()())()(())()))))()())(()())))()(", 16)]
 		public void Check_MinInsertions_BaseCase(string s, int result)
 		{
 			int minInsertions = solution.MinInsertions(s);

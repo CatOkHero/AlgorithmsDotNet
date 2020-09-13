@@ -123,8 +123,8 @@ namespace AlgorithmsLeetCodeCSharp.Contests.WeeklyContests
             {
                 while (i < nums1.Length)
                 {
-                    long square1 = (nums1[i] * nums1[i]) / 10000000007;
-                    long numsJK1 = (nums2[j] * nums2[k]) / 10000000007;
+                    long square1 = (long)nums1[i] * (long)nums1[i];
+                    long numsJK1 = (long)nums2[j] * (long)nums2[k];
 
                     if (square1 == numsJK1)
                     {
@@ -154,8 +154,8 @@ namespace AlgorithmsLeetCodeCSharp.Contests.WeeklyContests
             {
                 while (i < nums2.Length)
                 {
-                    long square2 = (nums2[i] * nums2[i]) / 10000000007;
-                    long numsJK2 = (nums1[j] * nums1[k]) / 10000000007;
+                    long square2 = (long)nums2[i] * (long)nums2[i];
+                    long numsJK2 = (long)nums1[j] * (long)nums1[k];
                     if (square2 == numsJK2)
                     {
                         count++;
