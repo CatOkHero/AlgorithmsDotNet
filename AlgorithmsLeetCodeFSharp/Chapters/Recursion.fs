@@ -19,3 +19,18 @@ let pow x n =
     elif n > 0 then powrec x n
     else 1 / powrec x n
 
+type treenode =
+    {
+        left : treenode;
+        right : treenode;
+        value : int;
+    }
+
+let rec maxdepth (x : treenode) = 
+    let left = maxdepth x.left
+    let right = maxdepth x.right
+    max (left + 1) (right + 1)
+
+let f n =
+    for i = 1 to n do
+        printfn "Hello World"

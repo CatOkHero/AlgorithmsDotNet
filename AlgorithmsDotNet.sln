@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OlegsInterview", "OlegsInterview\OlegsInterview.csproj", "{53C4DE53-901B-4405-B03E-940FC8A02C79}"
-EndProject
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "AlgorithmsLeetCodeFSharp", "AlgorithmsLeetCodeFSharp\AlgorithmsLeetCodeFSharp.fsproj", "{8C957135-6108-4718-9423-DB64E735121F}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AlgorithmsLeetCodeFSharp", "AlgorithmsLeetCodeFSharp\AlgorithmsLeetCodeFSharp.fsproj", "{8C957135-6108-4718-9423-DB64E735121F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlgorithmsLeetCodeCSharp", "AlgorithmsLeetCodeCSharp\AlgorithmsLeetCodeCSharp.csproj", "{CE3A2407-5FB3-455A-9236-F5E4CAF3EAAE}"
 EndProject
@@ -13,16 +11,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithmsLeetCodeCSharpTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithmsCodolityCSharp", "AlgorithmsCodolityCSharp\AlgorithmsCodolityCSharp.csproj", "{32545263-4BE0-4E45-AB67-E4D9CE946258}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AlgorithmsHackerRankFSharp", "AlgorithmsHackerRankFSharp\AlgorithmsHackerRankFSharp.fsproj", "{DB4DBE70-5C5F-430D-8722-E5E501DA948E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{53C4DE53-901B-4405-B03E-940FC8A02C79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{53C4DE53-901B-4405-B03E-940FC8A02C79}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{53C4DE53-901B-4405-B03E-940FC8A02C79}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{53C4DE53-901B-4405-B03E-940FC8A02C79}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8C957135-6108-4718-9423-DB64E735121F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8C957135-6108-4718-9423-DB64E735121F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C957135-6108-4718-9423-DB64E735121F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{32545263-4BE0-4E45-AB67-E4D9CE946258}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32545263-4BE0-4E45-AB67-E4D9CE946258}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32545263-4BE0-4E45-AB67-E4D9CE946258}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB4DBE70-5C5F-430D-8722-E5E501DA948E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB4DBE70-5C5F-430D-8722-E5E501DA948E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB4DBE70-5C5F-430D-8722-E5E501DA948E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB4DBE70-5C5F-430D-8722-E5E501DA948E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

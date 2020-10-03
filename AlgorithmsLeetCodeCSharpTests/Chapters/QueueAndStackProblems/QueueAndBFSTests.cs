@@ -6,7 +6,7 @@ namespace AlgorithmsLeetCodeCSharpTests.Chapters.QueueAndStackProblems
 {
 	public class QueueAndBFSTests
 	{
-		QueueAndBFS solution = new QueueAndBFS();
+		private readonly QueueAndBFS solution = new QueueAndBFS();
 
 		private static IEnumerable<TestCaseData> first_test()
 		{
