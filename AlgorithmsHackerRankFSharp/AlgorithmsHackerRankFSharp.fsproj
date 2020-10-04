@@ -6,11 +6,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="ThirtyDaysOfCode\Solutions.fs" />
-    <Compile Include="Program.fs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="ThirtyDaysOfCode\" />
+    <Folder Include="Algorithms\" />
+    <Folder Include="Algorithms\Strings\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ThirtyDaysOfCode\SixthDayOfCode.fs" />
+    <Compile Include="ThirtyDaysOfCode\EighthDayOfCode.fs" />
+    <Compile Include="Algorithms\Strings\PalindromeIndex.fs" />
+    <Compile Include="Program.fs" />
   </ItemGroup>
 </Project>

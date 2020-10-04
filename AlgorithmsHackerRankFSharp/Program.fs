@@ -2,9 +2,11 @@
 
 open System
 open ThirtyDaysOfCode
+open Algorithms
 
 [<EntryPoint>]
 let main argv =
-    SixthDayOfCode.mainf
-    printfn "Hello World from F#!"
+    //SixthDayOfCode.mainf
+    //EithsDayOfCode.mainf
+    Strings.PalindromeIndex.mainf
     0 // return an integer exit code
