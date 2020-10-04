@@ -9,11 +9,14 @@
     <Folder Include="ThirtyDaysOfCode\" />
     <Folder Include="Algorithms\" />
     <Folder Include="Algorithms\Strings\" />
+    <Folder Include="FunctionalProgramming\" />
+    <Folder Include="FunctionalProgramming\Recursion\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ThirtyDaysOfCode\SixthDayOfCode.fs" />
     <Compile Include="ThirtyDaysOfCode\EighthDayOfCode.fs" />
     <Compile Include="Algorithms\Strings\PalindromeIndex.fs" />
+    <Compile Include="FunctionalProgramming\Recursion\PascalsTriangle.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 </Project>
