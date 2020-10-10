@@ -15,6 +15,8 @@
   <ItemGroup>
     <Compile Include="ThirtyDaysOfCode\SixthDayOfCode.fs" />
     <Compile Include="ThirtyDaysOfCode\EighthDayOfCode.fs" />
+    <Compile Include="ThirtyDaysOfCode\NinthDayOfCode.fs" />
+    <Compile Include="ThirtyDaysOfCode\TenthDayOfCode.fs" />
     <Compile Include="Algorithms\Strings\PalindromeIndex.fs" />
     <Compile Include="FunctionalProgramming\Recursion\PascalsTriangle.fs" />
     <Compile Include="Program.fs" />

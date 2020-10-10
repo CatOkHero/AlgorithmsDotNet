@@ -9,5 +9,6 @@ let main argv =
     //SixthDayOfCode.mainf
     //EithsDayOfCode.mainf
     //Strings.PalindromeIndex.mainf
-    PascalsTriangle.mainf
+    //PascalsTriangle.mainf
+    TenthDayOfCode.mainf
     0 // return an integer exit code
