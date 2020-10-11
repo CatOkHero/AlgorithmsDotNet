@@ -2,6 +2,7 @@ namespace HackFest2020
 
 open System
 
+// https://www.hackerrank.com/contests/hackerrank-hackfest-2020/challenges/stones-piles
 module GameOfMaximization = 
     let n = Console.ReadLine() |> int
     let array = 
@@ -10,31 +11,28 @@ module GameOfMaximization =
 
     let isEven x = x % 2 = 0
 
-    let even =
+    let partEven, partOdd = 
         array
         |> Array.mapi (fun i v -> (i, v))
         |> Array.partition (fun (i, v) -> isEven i)
-        |> fst
+
+    let even =
+        partEven
         |> Array.map (fun (i, v) -> v)
 
     let odd =
-        array
-        |> Array.mapi (fun i v -> (i, v))
-        |> Array.partition (fun (i, v) -> not (isEven i))
-        |> fst
+        partOdd
         |> Array.map (fun (i, v) -> v)
-
-    let rule (even : int[]) (odd : int[]) =
-        (Array.sum even) = (Array.sum odd)
     
-    let isEvenBigger =
-        (Array.sum even) > (Array.sum odd)
+    let isEvenBigger even odd=
+        even > odd
 
     let mainf = 
-        let a = even
-        let b = odd
-        while not (rule even odd) do
-            if isEvenBigger then
+        let mutable evenSum = Array.sum even
+        let mutable oddSum = Array.sum odd
+
+        while (evenSum <> oddSum) do
+            if (isEvenBigger evenSum oddSum) then
                 let maxIndex = 
                         even
                         |> Array.mapi (fun i v -> (i, v))
@@ -47,6 +45,7 @@ module GameOfMaximization =
                     | _ -> 0
 
                 even.[maxIndex] <- evenMax
+                evenSum <- evenSum - 1
             else
                 let maxIndex = 
                         odd
@@ -60,8 +59,9 @@ module GameOfMaximization =
                     | _ -> 0
 
                 odd.[maxIndex] <- oddMax
+                oddSum <- oddSum - 1
 
-        printfn "%i" ((Array.sum even) + (Array.sum odd))   
+        printfn "%i" (evenSum + oddSum)   
 
 
                 
