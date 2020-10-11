@@ -1,24 +1,17 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
-
   <ItemGroup>
-    <Folder Include="ThirtyDaysOfCode\" />
-    <Folder Include="Algorithms\" />
-    <Folder Include="Algorithms\Strings\" />
-    <Folder Include="FunctionalProgramming\" />
-    <Folder Include="FunctionalProgramming\Recursion\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="ThirtyDaysOfCode\SixthDayOfCode.fs" />
-    <Compile Include="ThirtyDaysOfCode\EighthDayOfCode.fs" />
-    <Compile Include="ThirtyDaysOfCode\NinthDayOfCode.fs" />
-    <Compile Include="ThirtyDaysOfCode\TenthDayOfCode.fs" />
-    <Compile Include="Algorithms\Strings\PalindromeIndex.fs" />
-    <Compile Include="FunctionalProgramming\Recursion\PascalsTriangle.fs" />
+    <Compile Include="ThirtyDaysOfCode/SixthDayOfCode.fs" />
+    <Compile Include="ThirtyDaysOfCode/EighthDayOfCode.fs" />
+    <Compile Include="ThirtyDaysOfCode/NinthDayOfCode.fs" />
+    <Compile Include="ThirtyDaysOfCode/TenthDayOfCode.fs" />
+    <Compile Include="Algorithms/Strings/PalindromeIndex.fs" />
+    <Compile Include="FunctionalProgramming/Recursion/PascalsTriangle.fs" />
+    <Compile Include="HackFest2020/GameOfMaximization.fs" />
+    <Compile Include="HackFest2020/CyclicBinaryString.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 </Project>
