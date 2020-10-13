@@ -1,9 +1,8 @@
 ﻿// Learn more about F# at http://fsharp.org
 open Recursion
+open Chapters
 
 [<EntryPoint>]
 let main argv =
-    printfn "fibo(8) = %i" (fibonacci 8)
-    printfn "pow = %i" (pow 2 3)
-    f 2
+    LinkedListProblems.mainf
     0 // return an integer exit code
