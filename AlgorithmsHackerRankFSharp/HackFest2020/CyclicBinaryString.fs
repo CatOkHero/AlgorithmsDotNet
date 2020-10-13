@@ -10,52 +10,58 @@ module CyclicBinaryString =
         shifted = x
 
     let shiftString (s: string) =
-        let chars = s.ToCharArray()
-        let charArray = Array.concat [ chars.[1..]; chars.[0..0] ]
-        new string(charArray)
+        s.[(s.Length - 1)..(s.Length - 1)] + s.[0..(s.Length - 2)] 
         
-    let isPrime n =
+    let isPrime (n : uint64) =
         match n with
-        | _ when n > 3 && (n % 2 = 0 || n % 3 = 0) -> false
+        | _ when n > 3UL && (n % 2UL = 0UL || n % 3UL = 0UL) -> false
         | _ ->
-            let maxDiv = int(System.Math.Sqrt(float n)) + 1
-            let rec f d i = 
+            let maxDiv = uint64(System.Math.Sqrt(float n)) + 1UL
+            let rec f (d: uint64) (i: uint64) = 
                 if d > maxDiv then 
                     true
                 else
-                    if n % d = 0 then 
+                    if n % d = 0UL then 
                         false
                     else
-                        f (d + i) (6 - i)     
-            f 5 2
+                        f (d + i) (6UL - i)     
+            f 5UL 2UL
 
-    let res =
-        [|
+    let convert n =
+        try
+            Convert.ToUInt64(n, 2)
+        with _ ->
+            0UL
+
+
+    let mainf =
+            let mutable max = 0
+
             while not (isSameShift (shiftString shift)) do
-         
-                let n = Convert.ToInt32(shift, 2)
+       
+                let n = convert shift
 
                 if not (isPrime n) then
                     let mutable incrementer = 0
-                    while (n % (pown 2 incrementer) = 0) do
+                    while (n % (pown 2UL incrementer) = 0UL) do
                         incrementer <- incrementer + 1
     
-                    yield incrementer - 1
+                    if (incrementer - 1) > max then 
+                        max <- incrementer - 1
                 else 
-                    yield 0
+                    ()
 
                 shift <- (shiftString shift)
 
-            let n = Convert.ToInt32(shift, 2)
+            let n = convert shift
             if not (isPrime n) then
                     let mutable incrementer = 0
-                    while (n % (pown 2 incrementer) = 0) do
+                    while (n % (pown 2UL incrementer) = 0UL) do
                         incrementer <- incrementer + 1
     
-                    yield incrementer - 1
+                    if (incrementer - 1) > max then 
+                        max <- incrementer - 1
             else 
-                    yield 0
-        |]
+                    ()
 
-    let mainf =
-        printfn "%i" (Array.max res)
+            printfn "%i" (max)

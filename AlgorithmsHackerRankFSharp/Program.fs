@@ -12,6 +12,6 @@ let main argv =
     //Strings.PalindromeIndex.mainf
     //PascalsTriangle.mainf
     //TenthDayOfCode.mainf
-    GameOfMaximization.mainf
-    //CyclicBinaryString.mainf
+    //GameOfMaximization.mainf
+    CyclicBinaryString.mainf
     0 // return an integer exit code
