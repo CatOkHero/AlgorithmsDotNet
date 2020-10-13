@@ -16,6 +16,12 @@ module LinkedListProblems =
                     node
         findRec ls value
 
+    let rec sumTree ls =
+        match ls with
+        | Leaf -> 0
+        | Node(value, next) ->
+            value + sumTree(next)
+
     let createNode = 
         ListNode.Node(1, ListNode.Node(2, ListNode.Leaf))
 
@@ -24,3 +30,5 @@ module LinkedListProblems =
         printfn "%A" node
 
         printfn "%A" (findNode node 2)
+
+        printfn "%i" (sumTree node)
