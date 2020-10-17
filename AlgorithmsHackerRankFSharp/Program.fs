@@ -13,5 +13,7 @@ let main argv =
     //PascalsTriangle.mainf
     //TenthDayOfCode.mainf
     //GameOfMaximization.mainf
-    CyclicBinaryString.mainf
+    //CyclicBinaryString.mainf
+    //StringMingling.mainf
+    StringCompression.mainf
     0 // return an integer exit code
