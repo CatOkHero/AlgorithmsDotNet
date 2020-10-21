@@ -15,5 +15,6 @@ let main argv =
     //GameOfMaximization.mainf
     //CyclicBinaryString.mainf
     //StringMingling.mainf
-    StringCompression.mainf
+    //StringCompression.mainf
+    TwentyFifthDayOfCode.mainf
     0 // return an integer exit code
