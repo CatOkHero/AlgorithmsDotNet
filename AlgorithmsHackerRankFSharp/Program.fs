@@ -16,5 +16,6 @@ let main argv =
     //CyclicBinaryString.mainf
     //StringMingling.mainf
     //StringCompression.mainf
-    TwentyFifthDayOfCode.mainf
+    //TwentyFifthDayOfCode.mainf
+    TwentySixthDayOfCode.mainf
     0 // return an integer exit code

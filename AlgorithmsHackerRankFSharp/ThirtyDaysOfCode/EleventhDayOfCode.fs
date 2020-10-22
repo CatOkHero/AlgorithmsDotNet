@@ -22,4 +22,3 @@ module EleventhDayOfCode =
     //         match i, j with
     //         | 0, 0 -> loop array2D (i+1) (j+1)
 
-
