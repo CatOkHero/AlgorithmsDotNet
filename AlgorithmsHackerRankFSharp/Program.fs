@@ -2,6 +2,7 @@
 
 open ThirtyDaysOfCode
 open Algorithms
+open Algorithms.Strings
 open FunctionalProgramming.Recursion
 open HackFest2020
 
@@ -17,5 +18,6 @@ let main argv =
     //StringMingling.mainf
     //StringCompression.mainf
     //TwentyFifthDayOfCode.mainf
-    TwentySixthDayOfCode.mainf
+    //TwentyEightsDayOfCode.mainf
+    SuperReducedStrings.mainf
     0 // return an integer exit code

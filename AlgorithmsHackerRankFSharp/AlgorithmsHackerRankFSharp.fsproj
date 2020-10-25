@@ -11,7 +11,9 @@
     <Compile Include="ThirtyDaysOfCode/TwentiesDayOfCode.fs" />
     <Compile Include="ThirtyDaysOfCode/TwentyFifthDayOfCode.fs" />
     <Compile Include="ThirtyDaysOfCode/TwentySixthDayOfCode.fs" />
+    <Compile Include="ThirtyDaysOfCode/TwentyEightsDayOfCode.fs" />
     <Compile Include="Algorithms/Strings/PalindromeIndex.fs" />
+    <Compile Include="Algorithms/Strings/SuperReducedStrings.fs" />
     <Compile Include="FunctionalProgramming/Recursion/PascalsTriangle.fs" />
     <Compile Include="FunctionalProgramming/Recursion/StringMingling.fs" />
     <Compile Include="FunctionalProgramming/Recursion/StringCompression.fs" />
