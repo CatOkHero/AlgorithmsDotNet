@@ -5,6 +5,7 @@ open System.Collections.Generic
 
 module SuperReducedStrings = 
     let chars = Console.ReadLine().ToCharArray()
+    
     // let reduced =
     //     chars
     //     |> Array.groupBy (id)
