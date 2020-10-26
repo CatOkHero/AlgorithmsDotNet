@@ -19,5 +19,6 @@ let main argv =
     //StringCompression.mainf
     //TwentyFifthDayOfCode.mainf
     //TwentyEightsDayOfCode.mainf
-    SuperReducedStrings.mainf
+    //SuperReducedStrings.mainf
+    TwentyNinthDayOfCode.mainf
     0 // return an integer exit code
