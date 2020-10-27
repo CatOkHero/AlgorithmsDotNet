@@ -20,5 +20,6 @@ let main argv =
     //TwentyFifthDayOfCode.mainf
     //TwentyEightsDayOfCode.mainf
     //SuperReducedStrings.mainf
-    TwentyNinthDayOfCode.mainf
+    //TwentyNinthDayOfCode.mainf
+    StringOPermute.mainf
     0 // return an integer exit code
