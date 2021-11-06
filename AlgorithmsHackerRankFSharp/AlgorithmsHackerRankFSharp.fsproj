@@ -22,6 +22,9 @@
     <Compile Include="FunctionalProgramming/Recursion/StringOPermute.fs" />
     <Compile Include="HackFest2020/GameOfMaximization.fs" />
     <Compile Include="HackFest2020/CyclicBinaryString.fs" />
+    <Compile Include="FunctionalProgramming\MemoizationAndDp\PentagonalNumbers.fs" />
+    <Compile Include="Algorithms\Implementation\DayOfProgrammer.fs" />
+    <Compile Include="Algorithms\Implementation\NumberLineJumps.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 </Project>
