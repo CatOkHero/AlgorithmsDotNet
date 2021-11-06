@@ -5,6 +5,7 @@ open Algorithms
 open Algorithms.Strings
 open FunctionalProgramming.Recursion
 open HackFest2020
+open Algorithms.Implementation
 
 [<EntryPoint>]
 let main argv =
@@ -21,5 +22,6 @@ let main argv =
     //TwentyEightsDayOfCode.mainf
     //SuperReducedStrings.mainf
     //TwentyNinthDayOfCode.mainf
-    StringOPermute.mainf
+    //StringOPermute.mainf
+    NumberLineJumps.canMeet()
     0 // return an integer exit code
